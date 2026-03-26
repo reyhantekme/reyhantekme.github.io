@@ -21,6 +21,7 @@ var food: ColorRect
 var move_timer: Timer
 var score_label: Label
 var golden_apple_node: TextureRect
+var special_cats: Array = []
 
 func _ready():
 	if not Engine.is_editor_hint():
@@ -45,7 +46,13 @@ func setup_nodes():
 			if child.name == "Background":
 				child.queue_free()
 	
+	# Find all special cats (GoldenApple + the 5 new ones)
+	special_cats = []
 	golden_apple_node = get_node_or_null("GoldenApple")
+	if golden_apple_node: special_cats.append(golden_apple_node)
+	for i in range(1, 6):
+		var cat = get_node_or_null("SpecialCat" + str(i))
+		if cat: special_cats.append(cat)
 	
 	for y in range(GRID_SIZE):
 		for x in range(GRID_SIZE):
@@ -123,9 +130,11 @@ func move_snake():
 	var ate_food = (new_head == Vector2(food.position / TILE_SIZE))
 	var ate_golden = false
 	
-	if golden_apple_node and golden_apple_node.visible:
-		if golden_apple_node.get_rect().intersects(head_rect):
+	for cat in special_cats:
+		if cat.visible and cat.get_rect().intersects(head_rect):
 			ate_golden = true
+			cat.visible = false
+			break
 
 	# Check Food Collision
 	if ate_food:
@@ -137,7 +146,6 @@ func move_snake():
 	elif ate_golden:
 		score += 5
 		score_label.text = "Score: " + str(score)
-		golden_apple_node.visible = false
 		growth_pending += 4 # This move adds 1, plus 4 more pending = 5 total
 		move_timer.wait_time = max(0.05, move_timer.wait_time - 0.01)
 	else:

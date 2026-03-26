@@ -37,3 +37,43 @@ offset_right = 147.0
 offset_bottom = 327.0
 texture = ExtResource("2_cat")
 expand_mode = 1
+
+[node name="SpecialCat1" type="TextureRect" parent="."]
+offset_left = 220.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 80.0
+texture = ExtResource("2_cat")
+expand_mode = 1
+
+[node name="SpecialCat2" type="TextureRect" parent="."]
+offset_left = 40.0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 130.0
+texture = ExtResource("2_cat")
+expand_mode = 1
+
+[node name="SpecialCat3" type="TextureRect" parent="."]
+offset_left = 280.0
+offset_top = 280.0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("2_cat")
+expand_mode = 1
+
+[node name="SpecialCat4" type="TextureRect" parent="."]
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 125.0
+offset_bottom = 45.0
+texture = ExtResource("2_cat")
+expand_mode = 1
+
+[node name="SpecialCat5" type="TextureRect" parent="."]
+offset_left = 340.0
+offset_top = 50.0
+offset_right = 375.0
+offset_bottom = 85.0
+texture = ExtResource("2_cat")
+expand_mode = 1
