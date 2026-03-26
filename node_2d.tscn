@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d2p0t0vme4il0"]
+
+[ext_resource type="Script" uid="uid://c61667i718oj8" path="res://snake.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://c5dal47mkrosj" path="res://cat.png" id="2_cat"]
+
+[node name="Node2D" type="Node2D" unique_id=1909321189]
+script = ExtResource("1_wtcfe")
+
+[node name="BorderTop" type="ColorRect" parent="." unique_id=577929765]
+offset_right = 400.0
+offset_bottom = 1.0
+color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="BorderBottom" type="ColorRect" parent="." unique_id=2014500911]
+offset_top = 399.0
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="BorderLeft" type="ColorRect" parent="." unique_id=519726502]
+offset_right = 1.0
+offset_bottom = 400.0
+color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="BorderRight" type="ColorRect" parent="." unique_id=254517418]
+offset_left = 399.0
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="Board" type="Node2D" parent="." unique_id=1193034840]
+
+[node name="GoldenApple" type="TextureRect" parent="." unique_id=294028519]
+offset_left = 57.0
+offset_top = 243.0
+offset_right = 147.0
+offset_bottom = 327.0
+texture = ExtResource("2_cat")
+expand_mode = 1
